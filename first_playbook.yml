@@ -12,7 +12,7 @@
 
     - name: Display the config
       debug:
-        msg: "The hostname iss {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
 
     # - name: configurable backup path
     #   exos_config:
