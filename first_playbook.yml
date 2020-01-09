@@ -23,8 +23,8 @@
     #       filename: backup.cfg
     #       dir_path: /root/git/muckaround
 
-    - name: check the startup-config against the running-config
-      exos_config:
-        diff_against: startup
-        diff_ignore_lines:
-          - ntp clock .*    
+    # - name: check the startup-config against the running-config
+    #   exos_config:
+    #     diff_against: startup
+    #     diff_ignore_lines:
+    #       - ntp clock .*    
