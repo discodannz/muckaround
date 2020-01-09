@@ -13,3 +13,12 @@
     - name: Display the config
       debug:
         msg: "The hostname iss {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+
+    - name: configurable backup path
+      exos_config:
+        lines:
+          - configure ports 2 description-string "Master Uplink"
+        backup: yes
+        backup_options:
+          filename: backup.cfg
+          dir_path: /root/git/muckaround
