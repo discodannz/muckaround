@@ -1,0 +1,12 @@
+$date = (get-date | Out-String).Trim()
+$src = "c:\temp\p-drive\test.zip"
+$dest = "c:\temp\p-drive\test"
+$logfile = "c:\temp\p-drive\zip-test.log"
+
+Write-Output $date >> $logfile
+(measure-command {
+    Expand-Archive -LiteralPath $src -DestinationPath $dest
+} | Select-Object -Property Milliseconds | Format-List | Out-String).Trim() >> $logfile
+Write-Output "`n" >> $logfile
+
+Remove-Item -Recurse -Force $dest
